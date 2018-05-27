@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+
+<head>
+<title>Home</title>
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link
+	th:href="@{/assets/global/plugins/font-awesome/css/font-awesome.min.css}"
+	rel="stylesheet" type="text/css" />
+
+<link
+	th:href="@{/assets/global/plugins/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet" type="text/css" />
+<!-- END GLOBAL MANDATORY STYLES -->
+<link rel="icon" th:href="@{/disys-icon.ico}" />
+
+<!-- BEGIN THEME STYLES -->
+<link th:href="@{/assets/css/style-metronic.css}" rel="stylesheet"
+	type="text/css" />
+<link th:href="@{/assets/css/style.css}" rel="stylesheet"
+	type="text/css" />
+<link th:href="@{/assets/css/pages/page404.css}" rel="stylesheet"
+	type="text/css" />
+<link th:href="@{/assets/css/themes/green.css}" rel="stylesheet"
+	type="text/css" id="style_color" />
+<link th:href="@{/assets/css/style-responsive.css}" rel="stylesheet"
+	type="text/css" />
+<link th:href="@{/assets/css/pages/prices.css}" rel="stylesheet"
+	type="text/css" />
+<link th:href="@{/assets/css/custom.css}" rel="stylesheet"
+	type="text/css" />
+
+
+<link
+	th:href="@{/assets/global/plugins/simple-line-icons/simple-line-icons.min.css}"
+	rel="stylesheet" type="text/css" />
+
+<link
+	th:href="@{/assets/global/plugins/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet" type="text/css" />
+<link
+	th:href="@{/assets/global/plugins/uniform/css/uniform.default.css}"
+	rel="stylesheet" type="text/css" />
+<link
+	th:href="@{/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css}"
+	rel="stylesheet" type="text/css" />
+<!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/assets/global/plugins/select2/select2.css}" />
+
+
+
+
+
+
+<!-- END PAGE LEVEL SCRIPTS -->
+<!-- BEGIN THEME STYLES -->
+<link th:href="@{/assets/global/css/components.css}"
+	id="style_components" rel="stylesheet" type="text/css" />
+<link th:href="@{/assets/global/css/plugins.css}" rel="stylesheet"
+	type="text/css" />
+<link th:href="@{/assets/admin/layout2/css/layout.css}" rel="stylesheet"
+	type="text/css" />
+<link id="style_color"
+	th:href="@{/assets/admin/layout2/css/themes/grey.css}" rel="stylesheet"
+	type="text/css" />
+<link th:href="@{/assets/admin/layout2/css/custom.css}" rel="stylesheet"
+	type="text/css" />
+
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+
+
+<script type="text/javascript"
+	th:src="@{/assets/magnet/plugins/tinymce/js/tinymce/tinymce.min.js}"></script>
+
+<script th:src="@{/assets/global/plugins/jquery.min.js}"
+	type="text/javascript"></script>
+<script th:src="@{/assets/global/plugins/jquery-migrate.min.js}"
+	type="text/javascript"></script>
+<script th:src="@{/assets/global/plugins/jquery-ui/jquery-ui.min.js}"
+	type="text/javascript"></script>
+<script
+	th:src="@{/assets/global/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js}"
+	type="text/javascript"></script>
+<script th:src="@{/assets/global/plugins/bootstrap/js/bootstrap.min.js}"
+	type="text/javascript"></script>
+
+<script
+	th:src="@{/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js}"
+	type="text/javascript"></script>
+<script
+	th:src="@{/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js}"
+	type="text/javascript"></script>
+<script th:src="@{/assets/global/plugins/jquery.blockui.min.js}"
+	type="text/javascript"></script>
+<script th:src="@{/assets/global/plugins/jquery.cokie.min.js}"
+	type="text/javascript"></script>
+<script th:src="@{/assets/global/plugins/uniform/jquery.uniform.min.js}"
+	type="text/javascript"></script>
+<script
+	th:src="@{/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js}"
+	type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script th:src="@{/assets/global/scripts/metronic.js}"
+	type="text/javascript"></script>
+<script th:src="@{/assets/admin/layout2/scripts/layout.js}"
+	type="text/javascript"></script>
+<script th:src="@{/assets/admin/layout2/scripts/demo.js}"
+	type="text/javascript"></script>
+<script th:src="@{/assets/admin/pages/scripts/portlet-draggable.js}"></script>
+<script type="text/javascript"
+	th:src="@{/assets/global/plugins/select2/select2.min.js}"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
+
+
+
+
+
+
+<!-- BEGIN DATA TABLE STYLES -->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/assets/global/plugins/datatables/extensions/Scroller/css/scroller.dataTables.min.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/assets/global/plugins/datatables/extensions/ColReorder/css/colReorder.dataTables.min.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css}" />
+<!-- END DATA TABLE STYLES -->
+
+
+
+<!-- BEGIN DATA TABLE PLUGINS -->
+<script type="text/javascript"
+	th:src="@{/assets/global/plugins/datatables/media/js/jquery.dataTables.js}"></script>
+<script type="text/javascript"
+	th:src="@{/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js}"></script>
+<script type="text/javascript"
+	th:src="@{/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js}"></script>
+<script type="text/javascript"
+	th:src="@{/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js}"></script>
+<script type="text/javascript"
+	th:src="@{/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js}"></script>
+<script type="text/javascript"
+	th:src="@{/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js}"></script>
+<script type="text/javascript"
+	th:src="@{/assets/global/scripts/datatable.js}"></script>
+<!-- END DATA TABLE PLUGINS -->
+
+<script th:src="@{/assets/disys/js/encdec.js}" type="text/javascript"></script>
+
+</head>
+
+<script type="text/javascript">
+
+
+
+function showCompetencySkills()
+{
+	
+	
+    var jobTitleId=$('#jobTitleId').val();
+    
+   
+	
+	 var data = {};
+
+		data["jobTitleId"]=jobTitleId;
+	 
+	 
+	 var encodedParams = Base64.encode(JSON.stringify(data));
+     var url = 'bed79dfc2dd159f4800d763e4615e982508?searchCriteria=' + encodedParams;
+	
+	  $.ajax({
+		     url: url,
+		     success : function(result) {
+		    	 
+		    	 result=JSON.parse(result);
+			
+					$('#experienceId').val(result.experience);
+					$('#gradeId').val(result.grade);
+					
+					
+				
+			},
+			error: function failCallBk(XMLHttpRequest, textStatus, errorThrown) {
+		        alert("An error occurred while processing your request. Please try again.");
+			}
+	  });
+}
+
+function clearFun()
+{
+	$('#projectId').val(""); 
+	$('#jobTitleId').val(""); 
+	$('#experienceId').val("");
+	$('#reportToId').val("");
+	$('#locationId').val("");
+	$('#gradeId').val("");
+	$('#shiftTimingId').val(""); 
+	$('#positionId').val("");
+	$('#hoursId').val("");
+	$('#reviewedById').val("");
+	$('#approvedById').val("");
+	
+}
+
+
+
+</script>
+<!-- BEGIN HEADER -->
+	<div class="header navbar navbar-default navbar-static-top">
+		<!-- BEGIN TOP BAR -->
+		<div class="front-topbar">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9 col-sm-9">
+						<ul class="list-unstyle inline">
+							<li><i class="fa fa-phone topbar-info-icon top-2"></i>Call us: <span>+91.44.6673 9000</span></li>
+							<li class="sep"><span>|</span></li>
+							<li><i class="fa fa-envelope-o topbar-info-icon top-2"></i>Email: <span>tag-india@disys.com</span></li>
+						</ul>
+					</div>
+					<div class="col-md-3 col-sm-3 login-reg-links">
+						<ul class="list-unstyled inline">
+							<li><a th:href="@{/d56b699830e77ba53855679cb1d}"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+				<div class="col-md-9 col-sm-9">
+				<a class="navbar-brand logo-v1" href="index.html"> <img th:src="@{/assets/img/logo.png}" id="logoimg" alt="" height="50"></img>
+				</a>
+				</div>
+				<div class="col-md-3 col-sm-3 login-reg-links">
+				
+				<a type="button" th:href="@{/bed79dfc2dd159f4800d763e4615e9fi8le}" target="_blank" class="button">Logs</a>
+				<!-- <input type="button" value="Log" class="btn green" th:onclick="'window.location.href=\''+@{/bed79dfc2dd159f4800d763e4615e9fi8le}+'\''"/> -->
+				</div>
+				</div>
+				<div class="row">
+				<div class="col-md-12 col-sm-12">
+				<br/>
+				<br/>
+				
+				</div>
+				
+				</div>
+			</div>
+		</div>
+		<!-- END TOP BAR -->
+
+		
+	</div>
+	<!-- END HEADER -->
+
+	<!-- BEGIN PAGE CONTAINER -->
+	<div class="page-container">
+
+
+<!-- BEGIN BREADCRUMBS -->
+<div layout:fragment="breadcrumbs">
+
+<div class="row breadcrumbs margin-bottom-40">
+		<div class="container">
+			<div class="col-md-4 col-sm-4">
+			
+			</div>
+			
+			
+			<div class="col-md-8 col-sm-8">
+				<ul class="pull-right breadcrumb">
+				
+				    <li class="active"> Pages <i class="fa fa-angle-right"></i> Home</li>
+					<li> <a th:href="@{/f86faa6bbf9ac94a7e459509a20}">Project </a></li>
+					<li><a th:href="@{/f91709c28e7e1a9127df3d234cc}">Assign JobTitle</a></li>
+					<li><a th:href="@{/c832398520c6db9d8dd62cf17353}">Assign JobTile With List</a></li>
+					<!-- <li><a th:href="@{/a658279f9b983958149f31e4d84}">Competency</a></li> -->
+				   <li><a th:href="@{/d56b67ba538599830e756791dcb}">Logout&nbsp;</a></li>
+					 
+					  
+					 
+					
+					 <!--  <li><a th:href="@{/b658279f9b98366666666666666}">CompetencySkills </a></li>
+					  <li><a th:href="@{/a658279f9b9839581COMPSKILLS}">CompetencySkills-DataTable </a></li> -->
+					 
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- END BREADCRUMBS -->
+</div>
+
+<div layout:fragment="content">
+	<!-- BEGIN CONTAINER -->
+	<div class="container">
+		<!-- BEGIN SERVICE BOX -->
+		<div class="row service-box">
+
+			<div class="col-md-12 col-sm-12">
+				<div class="tab-pane active">
+					<div class="portlet box green">
+						<div class="portlet-title">
+							<div class="caption">
+									JD Summary
+							</div>
+						</div>
+						<div class="portlet-body form">
+							<div class="form-body">
+								<form class="Project-form" name="disysForm"
+									th:action="@{/b282328146ac6afebaa8acd80e7}" method="post" onsubmit="return validateForm()" target="_blank">
+                                       <div class="model-body">
+										<div class="form-group">
+										  <span class="col-md-1"></span>
+											<label class="col-md-3">Project</label>
+											 <div class="col-md-6">
+											<select name="project" id="projectId"  class="form-control select2me circle" data-placeholder="Select the Project">
+											 		<option th:each="project : ${projectList}" th:value="${project.projectId}" th:text="${project.projectName}" />
+												</select> 
+											   
+												
+											</div>
+											<span class="col-md-2"></span>
+										</div>
+										<br/>
+										<br/>
+										<br/>
+									
+										<div class="form-group">
+										  <span class="col-md-1"></span>
+											<label class="col-md-3" for="form_control_1">Job Title</label>
+											<div class="col-md-6">
+											<select name="jobTitle" id="jobTitleId" class="form-control circle" th:onchange="'javascript:showCompetencySkills();'"> 
+											 		<option th:each="jobTitle : ${jobTitleList}"  th:value="${jobTitle.jobTitleId}" th:text="${jobTitle.jobTitleName}" />
+												</select>
+											</div>
+											<span class="col-md-2"></span>
+										</div>
+										<br/>
+										<br/>
+										<div class="form-group">
+								      	<span class="col-md-1"></span>
+											<label class="col-md-3 control-label" for="form_control_1">Experience</label>
+											<div class="col-md-6">
+											 <input type="text" id="experienceId" class="form-control input-circle" name="experience"  placeholder="Experience" readonly="readonly" />
+											</div>
+											<span class="col-md-2"></span>
+										</div>
+										<br/>
+										<br/>
+										<div class="form-group">
+										<span class="col-md-1"></span>
+											<label class="col-md-3 control-label" for="form_control_1">Grade</label>
+											<div class="col-md-6">
+												<input type="text" id="gradeId" class="form-control input-circle" name="grade"  placeholder="Grade" readonly="readonly"/>
+											</div>
+											<span class="col-md-2"></span>
+											
+										</div>
+											<br/>
+										<br/>
+										<div class="form-group">
+										<span class="col-md-1"></span>
+											<label class="col-md-3 control-label" for="form_control_1">Location</label>
+											<div class="col-md-6">
+											<input type="text" id="locationId" class="form-control input-circle" name="location"  placeholder="Enter the location" value="Bangalore"/>
+											</div>
+											<span class="col-md-2"></span>
+										</div>
+											<br/>
+										<br/>
+										<div class="form-group">
+										<span class="col-md-1"></span>
+											<label class="col-md-3 control-label" for="form_control_1">Reports To</label>
+											<div class="col-md-6">
+											<input type="text" id="reportToId" class="form-control input-circle" name="reportsTo"  placeholder="Enter the location" value="Project Manager"/>
+											</div>
+											<span class="col-md-2"></span>
+										</div>
+											<br/>
+										<br/>
+										<div class="form-group">
+										<span class="col-md-1"></span>
+											<label class="col-md-3 control-label" for="form_control_1">Shift Timings</label>
+											
+											<div class="col-md-6">
+											
+												<select name="shiftTiming" id="shiftTimingId"  class="form-control circle">
+											 		<option th:each="shiftTiming : ${shiftTimingList}" th:value="${shiftTiming.shiftType}" th:text="${shiftTiming.shiftType}" />
+												</select> 
+											</div>
+												<span class="col-md-2"></span>
+										</div>
+											<br/>
+										<br/>
+										<div class="form-group">
+										<span class="col-md-1"></span>
+											<label class="col-md-3 control-label" for="form_control_1">Type of Position</label>
+											<div class="col-md-6">
+												<input type="text" id="positionId" class="form-control input-circle" name="position"  placeholder="Enter the position" value="Full Time"/>
+											</div>
+												<span class="col-md-2"></span>
+										</div>
+											<br/>
+										<br/>
+										<div class="form-group">
+										<span class="col-md-1"></span>
+											<label class="col-md-3 control-label" for="form_control_1">Working Hours</label>
+											<div class="col-md-6">
+											<input type="text" id="hoursId" class="form-control input-circle" name="hours"  placeholder="Enter the Hours" value="40 hrs/Week"/>
+											</div>
+											<span class="col-md-2"></span>
+										</div>
+											<br/>
+										<br/>
+										<div class="form-group">
+										<span class="col-md-1"></span>
+											<label class="col-md-3 control-label" for="form_control_1">Reviewed By</label>
+											<div class="col-md-6">
+											<input type="text" id="reviewedById" class="form-control input-circle" name="reviewedBy" maxlength="50" placeholder="Enter the Reviewed By"/>
+											</div>
+											<span class="col-md-2"></span>
+										</div>
+										<br/>
+										<br/>
+										<div class="form-group">
+										<span class="col-md-1"></span>
+										<label class="col-md-3 control-label" for="form_control_1">Approved By</label> 
+										<div class="col-md-6">
+										<input type="text" id="approvedById" class="form-control input-circle" name="approvedBy" maxlength="50"  placeholder="Enter the Approved By"/>
+										</div>
+										<span class="col-md-2"></span>
+										
+										</div>
+										<br/>
+										<br/>
+																	
+									</div>
+									
+									<div class="modal-footer">
+									<div class="row">
+											<div class="col-md-offset-3 col-md-9" style="margin-left: -22%;">
+												<button class="btn green" type="submit" >Submit</button>
+												<input type="button" class="btn green" id="clearId" value="Clear" onClick="clearFun();"/> 
+												
+											</div>
+										</div>
+									
+									</div>
+								</form>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<!-- END SERVICE BOX -->
+
+		<div class="clearfix"></div>
+
+		<div class="clearfix"></div>
+
+	</div>
+	<!-- END CONTAINER -->
+</div>
+</div>
+<!-- BEGIN COPYRIGHT -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<p>
+						<span class="margin-right-10">
+							<script>
+			document.write(new Date().getFullYear());
+		                    </script>
+		 &copy; HatchBird Solutions. ALL Rights Reserved.</span>
+					</p>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- END COPYRIGHT -->
+	<style>
+
+.button:hover {
+background-color: #1d943b !important;
+    color: #fff !important;
+    outline: none !important;
+     text-decoration: none;
+}
+.button:active {
+  background-color: #1d943b !important;
+    color: #fff !important;
+    outline: none !important;
+    text-decoration: none;
+}
+
+.button {
+   
+    width: 150px;
+    height: 50px;
+    background:#26a69a;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+  
+    font-weight: bold;
+    text-decoration: none;
+    
+    color: #fff !important;
+    font-size: 12px;
+}
+}
+</style>
+	
+</html>

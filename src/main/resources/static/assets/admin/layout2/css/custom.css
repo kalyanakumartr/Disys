@@ -1,0 +1,67 @@
+/* here you can put your own css to customize and override the theme */
+
+/***
+Rounded Portlets
+***/
+/*
+.portlet {
+	border-radius: 4px !important;
+}
+
+.portlet .portlet-title {
+	border-radius: 4px 4px 0px 0px !important;
+}
+
+.portlet .portlet-body,
+.portlet .portlet-body .form-actions  {
+	border-radius: 0px 0px 4px 4px !important;
+}
+*/
+
+/* My Custom sytles */
+
+.no-border th, .no-border td{border-left: 0px !important; border-right:0px !important; border-bottom:0px !important}
+.font-weight-bold{font-weight:400;}
+.blue-bg-01{background-color:#00a8c6 !important;}
+.blue-bg-02{background-color:#40c0cb !important;}
+.green-bg-01{background-color:#8fbe00 !important;}
+.green-bg-02{background-color:#aee239 !important;}
+
+.btn-group-circle .btn-primary{margin-right:0px;}
+
+.page-footer .page-footer-inner{color:#999999 !important;}
+
+.form-group-main{border:1px solid #dddddd; padding-top:20px; margin-top:20px;}
+
+.boxed-border{ border:1px solid #dddddd;}
+
+.control-label{margin-top:8px;}
+
+#tab_5_3 .table-striped td{padding:13px !important;}
+
+.portlet{padding-bottom:15px; margin-bottom:0px;}
+
+.portlet.box.blue,
+.portlet.box.yellow,
+.portlet.box.purple,
+.portlet.box.red {border:none; background:none;}
+
+.portlet.box.blue > .portlet-title,
+.portlet.box.yellow > .portlet-title,
+.portlet.box.purple > .portlet-title,
+.portlet.box.red > .portlet-title{background-color:transparent; border-bottom:1px solid #eee;}
+
+.portlet.box.blue > .portlet-title > .caption,
+.portlet.box.yellow > .portlet-title > .caption,
+.portlet.box.purple > .portlet-title > .caption,
+.portlet.box.red > .portlet-title > .caption{color:#44b6ae !important; font-size:16px;text-transform:uppercase; font-weight:700;}
+
+.portlet.box > .portlet-title > .caption{padding:10px 0 9px 0;}
+
+.portlet.box > .portlet-title{color:#44b6ae !important; font-size:16px;}
+
+.tabbable-custom{overflow:visible;}
+
+.form-group .form-group{margin:0px;}
+
+.form-title{color:#44b6ae !important; font-size:16px;text-transform:uppercase; font-weight:700;}

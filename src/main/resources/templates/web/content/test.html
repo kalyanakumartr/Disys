@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+
+<head>
+<title>Home</title>
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<link th:href="@{/assets/global/plugins/font-awesome/css/font-awesome.min.css}" rel="stylesheet" type="text/css" /> 
+
+
+<link th:href="@{/assets/global/plugins/simple-line-icons/simple-line-icons.min.css}" rel="stylesheet" type="text/css" />
+
+<link th:href="@{/assets/global/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/assets/global/plugins/uniform/css/uniform.default.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css}" rel="stylesheet" type="text/css" />
+<!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link rel="stylesheet" type="text/css" th:href="@{/assets/global/plugins/select2/select2.css}" />
+
+
+
+<!-- END PAGE LEVEL SCRIPTS -->
+<!-- BEGIN THEME STYLES -->
+ <link th:href="@{/assets/global/css/components.css}" id="style_components" rel="stylesheet" type="text/css" /> 
+<link th:href="@{/assets/global/css/plugins.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/assets/admin/layout2/css/layout.css}" rel="stylesheet" type="text/css" />
+<link id="style_color" th:href="@{/assets/admin/layout2/css/themes/grey.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/assets/admin/layout2/css/custom.css}" rel="stylesheet" type="text/css" />
+
+
+
+<script type="text/javascript" th:src="@{/assets/magnet/plugins/tinymce/js/tinymce/tinymce.min.js}"></script>
+
+<script th:src="@{/assets/global/plugins/jquery.min.js}" type="text/javascript"></script>
+<script th:src="@{/assets/global/plugins/jquery-migrate.min.js}" type="text/javascript"></script>
+<script th:src="@{/assets/global/plugins/jquery-ui/jquery-ui.min.js}" type="text/javascript"></script>
+<script th:src="@{/assets/global/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js}" type="text/javascript"></script>
+<script th:src="@{/assets/global/plugins/bootstrap/js/bootstrap.min.js}" type="text/javascript"></script>
+
+<script th:src="@{/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js}" type="text/javascript"></script>
+<script th:src="@{/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js}" type="text/javascript"></script>
+<script th:src="@{/assets/global/plugins/jquery.blockui.min.js}" type="text/javascript"></script>
+<script th:src="@{/assets/global/plugins/jquery.cokie.min.js}" type="text/javascript"></script>
+<script th:src="@{/assets/global/plugins/uniform/jquery.uniform.min.js}" type="text/javascript"></script>
+<script th:src="@{/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js}" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script th:src="@{/assets/global/scripts/metronic.js}" type="text/javascript"></script>
+<script th:src="@{/assets/admin/layout2/scripts/layout.js}" type="text/javascript"></script>
+<script th:src="@{/assets/admin/layout2/scripts/demo.js}" type="text/javascript"></script>
+<script th:src="@{/assets/admin/pages/scripts/portlet-draggable.js}"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
+<script>
+jQuery(document).ready(function() {       
+   // initiate layout and plugins
+   loadTinyMCE();
+   Metronic.init(); // init metronic core components
+Layout.init(); // init current layout
+Demo.init(); // init demo features
+   PortletDraggable.init();
+});
+
+
+var count=1;
+function addButton()
+{
+	  $('#modelBodyId').append('<div id="skillId'+count+'" class="row row-form"> <div class="form-group"><span class="col-md-1"></span><div class="col-md-4"> <select name="skills" id="skillsId"  class="form-control select2me circle" onselect=""><option th:each="competency : ${competencyList}" th:value="${competency.competencyId}" th:text="${competency.competencyName}" /></select>'
+				+'</div> <span class="col-md-1"></span><div class="col-md-4"><textarea rows="3" cols="50" class="form-control"></textarea> </div><div class="col-md-2"> <i class="fa fa-times-circle" style="font-size:25px; color:red; cursor: pointer;" id="deleteBtnShow" onclick="deleteButton('+count+');"></i> </div></div></div><br/>');
+
+	count++;
+}
+
+
+function deleteButton(count)
+{
+
+		 alert("you want to delete this row!");
+		 $('#skillId'+count).remove();
+
+}
+
+function loadTinyMCE() {
+	tinymce
+			.init({
+				selector : "textarea",
+				theme : "modern",
+				resize : "vertical",
+				plugins : [
+						"advlist autolink lists link image charmap  preview hr ",
+						"searchreplace wordcount visualblocks visualchars code ",
+						"insertdatetime  nonbreaking save table contextmenu directionality",
+						"paste textcolor colorpicker textpattern" ],
+				menubar : false,
+				toolbar : "styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent"
+			});
+}
+
+</script>
+
+
+</head>
+
+
+
+<!-- BEGIN BREADCRUMBS -->
+<div layout:fragment="breadcrumbs">
+
+<div class="row breadcrumbs margin-bottom-40">
+		<div class="container">
+			<div class="col-md-4 col-sm-4">
+				<h1></h1>
+			</div>
+			<div class="col-md-8 col-sm-8">
+				<ul class="pull-right breadcrumb">
+					<li><a th:href="@{/}">Home</a></li>
+									
+					<li> Pages <i class="fa fa-angle-right"></i>
+					Project </li>
+					<li><a th:href="@{/a6c241b8797f5277123jobTitle}">Assign JobTitle</a></li>
+					<li class="active"><a th:href="@{/a6c241b8797f52e1e77123kills}">Skills </a></li>
+					
+					 
+				
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END BREADCRUMBS -->
+
+
+<div layout:fragment="content">
+	<!-- BEGIN CONTAINER -->
+	<div class="container" style="width:1350px;">
+		<!-- BEGIN SERVICE BOX -->
+		  <!-- BEGIN PAGE CONTENT-->
+				<div class="portlet light">
+					<div class="portlet-body">
+						
+						<div class="row" id="sortable_portlets">
+							<div class="col-md-6 column sortable">
+								<div class="portlet portlet-sortable box green-haze">
+									<div class="portlet-title">
+										<div class="caption">
+											<i class="fa fa-gift"></i>Current Skills
+										</div>
+										
+									</div>
+									<div class="portlet-body form">
+										<form class="form-horizontal">
+												<div class="form-body">
+													<div class="portlet box green">
+							<div class="portlet-title">
+								<div class="caption">
+									<i class="fa fa-cogs"></i>Skills
+								</div>
+								<div class="tools">
+									<a href="javascript:;" class="collapse">
+									</a>
+									<a href="#portlet-config" data-toggle="modal" class="config">
+									</a>
+									<a href="javascript:;" class="reload">
+									</a>
+									<a href="javascript:;" class="remove">
+									</a>
+								</div>
+							</div>
+							<div class="portlet-body flip-scroll">
+								<table class="table table-bordered table-striped table-condensed flip-content">
+								<thead class="flip-content">
+								<tr>
+									<th width="20%">
+										 Skill Id
+									</th>
+									<th>
+										 Skill Name
+									</th>
+									<th>
+										 Skill Value
+									</th>
+									
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>
+										 AAC
+									</td>
+									<td>
+										 AUSTRALIAN AGRICULTURAL COMPANY LIMITED.
+									</td>
+									<td class="numeric">
+										 &nbsp;
+									</td>
+									
+								</tr>
+								<tr>
+									<td>
+										 AAD
+									</td>
+									<td>
+										 ARDENT LEISURE GROUP
+									</td>
+									<td>
+										
+									</td>
+									
+								</tr>
+									</tbody>	
+									</table>
+									</div>		
+										
+										</div>
+									            </div>
+									</form>
+								</div>
+								</div>
+								
+							</div>
+							
+							<div class="col-md-6 column sortable">
+								
+								<div class="portlet portlet-sortable box blue-hoki">
+									<div class="portlet-title">
+										<div class="caption">
+											<i class="fa fa-gift"></i>Add Skills
+										</div>
+										
+									</div>
+									<div class="portlet-body form">
+										
+										<form action="#" class="form-horizontal">
+												<div class="form-body">
+													<div class="form-group">
+														<label class="col-md-2 control-label"></label>
+														
+														<div class="col-md-6">
+														 <select name="skills" id="skillsId"  class="form-control select2me circle">
+																 <option value="">Select the Skills </option>
+											             	<option th:each="competency : ${competencyList}" th:value="${competency.competencyId}" th:text="${competency.competencyName}" />
+												          </select> 
+														</div>
+														
+														
+													</div>
+													<br/>
+													<div class="form-group">
+													<label class="col-md-2 control-label"></label>
+														<div class="col-md-9">
+															<textarea id="skillsDescId" style="border-width:2px;" rows="3" cols="25" name="editor1" data-error-container="#editor1_error"></textarea>
+														</div>
+													<label class="col-md-1 control-label"></label>
+													</div>
+													</div>
+													</form>
+									</div>
+								</div>
+								
+								<!-- empty sortable porlet required for each columns! -->
+								<div class="portlet portlet-sortable-empty">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END PAGE CONTENT-->
+										
+		<!-- END SERVICE BOX -->
+
+		<div class="clearfix"></div>
+	</div>
+	<!-- END CONTAINER -->
+</div>
+</html>

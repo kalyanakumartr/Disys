@@ -1,0 +1,260 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="/web/content/index">
+
+<head>
+<title>Assign TobTitle</title>
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<link th:href="@{/assets/global/plugins/font-awesome/css/font-awesome.min.css}" rel="stylesheet" type="text/css"/>
+
+<link th:href="@{/assets/global/plugins/simple-line-icons/simple-line-icons.min.css}" rel="stylesheet" type="text/css"/>
+
+<link th:href="@{/assets/global/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+<link th:href="@{/assets/global/plugins/uniform/css/uniform.default.css}" rel="stylesheet" type="text/css"/>
+<link th:href="@{/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css}" rel="stylesheet" type="text/css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link rel="stylesheet" type="text/css" th:href="@{/assets/global/plugins/select2/select2.css}"/>
+
+
+
+<!-- END PAGE LEVEL SCRIPTS -->
+<!-- BEGIN THEME STYLES -->
+<script th:src="@{/assets/global/plugins/jquery.min.js}" type="text/javascript"></script>
+
+<link th:href="@{/assets/global/css/components.css}" id="style_components" rel="stylesheet" type="text/css"/>
+<link th:href="@{/assets/global/css/plugins.css}" rel="stylesheet" type="text/css"/>
+<link th:href="@{/assets/admin/layout2/css/layout.css}" rel="stylesheet" type="text/css"/>
+<link id="style_color" th:href="@{/assets/admin/layout2/css/themes/grey.css}" rel="stylesheet" type="text/css"/>
+<link th:href="@{/assets/admin/layout2/css/custom.css}" rel="stylesheet" type="text/css"/>
+
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script type="text/javascript" th:src="@{/assets/global/plugins/bootstrap-select/bootstrap-select.min.js}"></script>
+<script type="text/javascript" th:src="@{/assets/global/plugins/select2/select2.min.js}"></script>
+<script type="text/javascript" th:src="@{/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js}"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+
+<script type="text/javascript" th:src="@{/assets/magnet/plugins/tinymce/js/tinymce/tinymce.min.js}"></script>
+<script type="text/javascript">
+
+jQuery(document).ready(function() {
+	
+	 loadTinyMCE();
+	 
+	     Metronic.init(); // init metronic core components
+	     Layout.init(); // init current layout
+	     Demo.init(); // init demo features
+	     PortletDraggable.init();
+
+});
+
+function loadTinyMCE() {
+	   tinymce
+	       .init({
+	         selector : "textarea",
+	         theme : "modern",
+	         resize : "vertical",
+	         plugins : [
+	             "advlist autolink lists link image charmap  preview hr ",
+	             "searchreplace wordcount visualblocks visualchars code ",
+	             "insertdatetime  nonbreaking save table contextmenu directionality",
+	             "paste textcolor colorpicker textpattern" ],
+	         menubar : false,
+	         toolbar : "styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent"
+	       });
+	 }
+	 
+	 
+	 
+function validationProject()
+{
+	 var data=$('#projectId').val();
+	
+	 if(!data)
+		 {
+		 alert("Please Select Project");
+		 }
+
+}
+</script>
+
+</head>
+
+
+
+<!-- BEGIN BREADCRUMBS -->
+<div layout:fragment="breadcrumbs">
+<div class="row breadcrumbs margin-bottom-40">
+		<div class="container">
+			<div class="col-md-4 col-sm-4">
+				<h1></h1>
+			</div>
+			<div class="col-md-8 col-sm-8">
+				<ul class="pull-right breadcrumb">
+					
+									
+					<li> Pages <i class="fa fa-angle-right"></i> 
+					<a th:href="@{/a6c241b8797f52e1e77317b96a2}">Home</a></li>
+					<li><a th:href="@{/f86faa6bbf9ac94a7e459509a20}">Project </a></li>
+					<li class="active">Assign JobTitle</li>
+					<li><a th:href="@{/c832398520c6db9d8dd62cf17353}">Assign JobTitle With List</a></li>
+				<!--<li><a th:href="@{/a658279f9b983958149f31e4d84}">Competency </a></li>  -->
+					
+					 <li><a th:href="@{/d56b67ba538599830e756791dcb}">Logout&nbsp;</a></li>
+				
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+
+
+
+
+
+<!-- END BREADCRUMBS -->
+
+<div layout:fragment="content">
+	<!-- BEGIN CONTAINER -->
+	<div class="container">
+		<!-- BEGIN SERVICE BOX -->
+		<div class="row service-box">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+		 <div th:if="${message!=null}">
+		  <div th:if="${css=='success'}" class="alert alert-success" id="alertDivId">
+		        <button class="close" data-dismiss="alert"></button>
+				<span th:text="${message}"></span>
+		</div>
+          <div th:if="${css=='danger'}" class="alert alert-danger" id="alertDivId">
+		        <button class="close" data-dismiss="alert"></button>
+				<span th:text="${message}"></span>
+			</div>
+          </div>
+          </div>
+         <div class="col-md-2"></div>
+
+			<div class="col-md-12 col-sm-12">
+				<div class="tab-pane active">
+					<div class="portlet box green">
+						<div class="portlet-title">
+							<div class="caption">
+									Assign JobTitle
+							</div>
+						</div>
+						<div class="portlet-body form">
+							<div class="form-body">
+							<form action="#" th:action="@{/a6c241b8797f52e1eADDJobTitle}" th:object="${projectModel}" method="post">
+								
+                                       <div class="model-body">
+									
+									
+									 <div class="form-group">
+										  <span class="col-md-1"></span>
+											<label class="col-md-3">Project</label>
+											 <div class="col-md-6">
+											<select name="project" id="projectId"  class="form-control select2me circle" data-placeholder="Select the Project">
+											 		<option th:each="project : ${projectList}" th:value="${project.projectId}" th:text="${project.projectName}" />
+												</select> 
+											   
+												
+											</div>
+											<span class="col-md-2"></span>
+										</div>
+										<br/>
+										<br/>
+										<br/>
+									     
+										
+										<div class="form-group">
+										  <span class="col-md-1"></span>
+											<label class="col-md-3" for="form_control_1">Job Title</label>
+											<div class="col-md-6">
+											<select name="jobTitle" id="jobTitleId" class="form-control circle" th:onchange="'javascript:showCompetencySkills();'"> 
+											 		<option th:each="jobTitle : ${jobTitleList}"  th:value="${jobTitle.jobTitleId}" th:text="${jobTitle.jobTitleName}" />
+												</select>
+											</div>
+											<span class="col-md-2"></span>
+										</div>
+										<br/>
+										<br/>
+									   <br/>
+									   
+									   
+									 
+										
+										<div class="row">
+											<div class="form-group">
+									      	<span class="col-md-2"></span>
+												<label class="col-md-2" for="form_control_1">Work Experience</label>
+												<div class="col-md-5">
+												<textarea id="experiencecId" name="workExperiencec" rows="3" cols="50" class="form-control"></textarea>
+												</div>
+												<span class="col-md-3"></span>
+											</div>
+										</div>
+										<br/>
+										
+										<div class="row">
+										<div class="form-group">
+										<span class="col-md-2"></span>
+											<label class="col-md-2 control-label" for="form_control_1">Desired Skills</label>
+											<div class="col-md-5">
+											<textarea id="desiredSkillId" name="desiredSkill" rows="3" cols="50" class="form-control"></textarea>
+											
+											</div>
+											<span class="col-md-3"></span>
+											
+										</div>
+										</div>
+										<br/>
+										<div class="row">
+										<div class="form-group">
+										<span class="col-md-2"></span>
+											<label class="col-md-2 control-label" for="form_control_1">Preferred Skills</label>
+											<div class="col-md-5">
+											<textarea id="preferredSkillId" name="preferredSkill" rows="3" cols="50" class="form-control"></textarea>
+											</div>
+											<span class="col-md-3"></span>
+											
+										</div>
+										</div>
+										<br/>
+									   
+										
+								
+									   </div>
+									<div class="modal-footer">
+									<div class="row">
+											<div class="col-md-offset-3 col-md-9" style="margin-left: -22%;">
+												<button id="submitBtn" class="btn green" type="submit" onClick="validationProject();">Save</button>
+												<input type="button" class="btn green" id="clearId" value="Clear" onClick="clearFun();"/> 
+												
+											</div>
+										</div>
+									
+									</div>
+								</form>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<!-- END SERVICE BOX -->
+
+		<div class="clearfix"></div>
+
+		<div class="clearfix"></div>
+
+	</div>
+	<!-- END CONTAINER -->
+</div>
+</html>
